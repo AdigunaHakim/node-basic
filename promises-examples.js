@@ -1,5 +1,3 @@
-const { rejects } = require('assert');
-const { resolve } = require('path');
 const movies = require('./data/movies.json');
 const reviews = require('./data/reviews.json');
 const users = require('./data/users.json');
