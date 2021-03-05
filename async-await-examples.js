@@ -43,25 +43,18 @@ const getUser = (username) => {
     });
 };
 
-// more simple, scaleable & well structure than callback, most important we can catch if any error
-getMovie(1)
-.then(movie => {
-    console.log('Movies : \n', movie);
-    return getReview(movie.id);
-})
-.then(review => {
-    console.log('Reviews : \n', review);
-    return getUser(review.reviewer);
-})
-.then(user => {
-    console.log('Users : \n', user);
-})
-.catch(err => {
-    console.log(err);
-});
+// another manner to handle promise, with IFFE async format 
+(async () => {
+    try {
+        const movie = await getMovie(1);
+        console.log('Movies : \n', movie);
 
-module.exports = {
-    getMovie,
-    getReview,
-    getUser
-}
+        const review = await getReview(movie.id);
+        console.log('Reviews : \n', review);
+
+        const user = await getUser(review.reviewer);
+        console.log('Users : \n', user);
+    } catch(err) {
+        console.log(err);
+    }
+})();
