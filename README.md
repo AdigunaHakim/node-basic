@@ -1,6 +1,6 @@
 # node-basic
 
-##### Rrequirement :
+##### requirement :
 install node js :
 https://nodejs.org/en/download/
 
@@ -20,7 +20,7 @@ run `node file.js` replace file.js with the file you want to run
 
 ---
 
-##### here is a list of thumb rules for using async and await:
+##### here is a list of thumb rules for using async and await :
 
 1. async functions return a promise.
 2. async functions use an implicit Promise to return results. Even if you don’t return a promise explicitly, the async function makes sure that your code is passed through a promise.
