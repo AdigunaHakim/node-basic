@@ -4,7 +4,7 @@
 install node js :
 https://nodejs.org/en/download/
 
-run `node file.js`
+run `node file.js` replace file.js with the file you want to run
 
 ##### npm command :
 - `npm init` to create initial project
