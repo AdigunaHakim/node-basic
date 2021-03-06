@@ -1,10 +1,11 @@
-const { opendir } = require('fs');
+const { opendir, stat } = require('fs');
 const { promisify } = require('util');
 
-const oDir = promisify(opendir);
+const getDir = promisify(opendir);
+const getStat = promisify(stat);
 
 // callback opendir is async, so we use handle it with async/await for each loop
-oDir('./')
+getDir('./')
 .then(async (dir) => {
     for await (let dirent of dir) {
         console.log(dirent.name)
@@ -12,4 +13,12 @@ oDir('./')
 })
 .catch(err => {
     console.log(err);
+});
+
+getStat('./app.js')
+.then(stat => {
+    console.log(stat);
 })
+.catch(err => {
+    console.log(err);
+});
