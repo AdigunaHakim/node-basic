@@ -3,6 +3,7 @@ const { promisify } = require('util');
 
 const filename = './test.txt';
 
+// async await is not worked here because its callback function and not promise function
 opendir(filename, async (err, dir) => {
     if(err){
         await writeFile(filename, 'Hello World!', err => {
